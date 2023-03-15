@@ -1,0 +1,10 @@
+확장 설치 목록
+open in browser : html문서를 브라우저로 열기(단축키 : alt + b)
+Quick HTML Previewer : html문서를 우측에서 미리보기(단축키 : ctrl + q  s)
+htmltagwrap : 글자에 태그 자동 생성(단축키 : alt + w)
+Auto Rename Tag : 여는 태그를 바꾸면 닫는 태그가 자동으로 바뀜
+Image preview : 왼쪽 줄번호 측에 작게 이미지 미리보기
+Live Server : 저장하면 새로고침하지 않아도 바로 적용
+
+------------ 유용한 단축키
+alt + shift + F : 자동 정렬
