@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 관련 스타일</title>
+    <style>
+        body {
+            background-color: aqua;
+            background-color: rgba(0, 84, 255, 0.2);
+        }
+        #div-bg {
+            background-color: white;
+            padding: 20px;
+            border: 30px solid blue;
+            width: 50%; /* 내용만 50% */
+            box-sizing: border-box; /* content-box:기본값 */
+        }
+        
+        .div-test {
+            margin: 30px;
+            background-color: yellow;
+            border: 10px dashed;
+            padding: 20px;
+        }
+        #div1 {background-clip: border-box;}
+        #div2 {background-clip: padding-box;}
+        #div3 {background-clip: content-box;}
+
+        #bg-img {
+            border: 1px solid;
+            width: 70%;
+            height: 800px;
+            
+            background-image: url(resources/img/img4.jpg);
+            
+            background-repeat: no-repeat;
+            /* background-repeat: repeat-x; */
+
+            background-size: auto; /* 기본값 : 원래이미지 사이즈 그대로 */
+            background-size: contain;   /* 해당 요소안에 이미지가 모두 보이게 */
+            background-size: cover;     /* 해당 요소안에 이미지가 가득 차게 */
+            background-size: 100px;     /* 가로 길이 */
+            background-size: 100px 100px;   /* 가로길이 세로길이 */
+            background-size: 50%;
+            background-size: 50% 50%;
+            background-size: auto;
+
+            background-position: left top;  /* 기본값 */
+            background-position: center bottom;
+            background-position: center center;
+            background-position: 20% 30%;
+            background-position: 50% 50%;
+
+            background-attachment: scroll;  /* 기본값 */
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>배경 관련 스타일(background~)</h1>
+
+    <h3>background-color : 배경색 지정하고자 할 때 사용</h3>
+
+    <div id="div-bg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam facere, reprehenderit nesciunt harum saepe quidem ducimus minima deserunt? A voluptas repellendus modi eligendi esse nisi alias, dolorem ut quam eveniet.
+        Praesentium veritatis est, obcaecati aperiam cum facilis accusantium repellendus nemo sint ea, error alias exercitationem, quo voluptate illum ducimus voluptas enim provident minima! Ipsam, architecto quisquam nisi voluptas delectus illo.
+        Ipsa quia quibusdam repellat quaerat placeat consectetur corporis fugiat rerum, cupiditate atque cumque. Blanditiis, necessitatibus quas voluptatem a minima, dicta vel dolores, repellat maxime nam debitis sit quia accusamus iure!
+    </div>
+
+    <hr>
+
+    <h3>background-clip : 배경을 적용시키고자 하는 범위를 지정할 때 사용</h3>
+    <pre>
+    선택자 {
+        background-clip: border-box(기본값)|padding-box|content-box
+    }
+    </pre>
+
+    <div class="div-test" id="div1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt doloremque nemo, numquam tempore ex incidunt sit suscipit deleniti libero accusamus quibusdam aut non mollitia! Nam assumenda soluta iste veritatis repudiandae?</div>
+    <div class="div-test" id="div2">Aperiam molestias hic provident numquam aut? Beatae quo porro enim dolore facilis? Quibusdam cum, dicta quam voluptatem vero dolorem aperiam reprehenderit iusto ducimus sit minima quo dolores tempora neque harum.</div>
+    <div class="div-test" id="div3">Deserunt quasi ad architecto officia, doloribus atque impedit, iusto quidem animi adipisci iste neque perferendis recusandae enim, esse modi nihil ducimus veritatis nesciunt placeat laboriosam? Veritatis labore possimus fugit delectus.</div>
+
+    <hr>
+
+    <h3>배경 이미지 테스트</h3>
+    <pre>
+        선택자 {
+            background-image :url("이미지 경로");
+            background-repeat: repeat|repeat-x|repeat-y|no-repeat;
+            background-size : auto|contain|cover|px px|% %;
+            background-position : 좌/우/가운데 위/아래/가운데|px px|% %;
+            background-attachment : scroll|fixed;
+        }
+    </pre>
+    
+    <div id="bg-img"></div>
+</body>
+</html>

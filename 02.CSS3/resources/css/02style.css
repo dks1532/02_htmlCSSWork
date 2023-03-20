@@ -1,0 +1,99 @@
+/* css영역 */
+h2 {color: red;}
+
+/* ====================== 1.속성선택자 ====================== */
+/* div요소들 중 name속성값이 name1과 "일치"하는 요소 */
+div[name=name1] {
+    background-color: orange;
+}
+
+/* div요소들 중 name속성값에 name1이 "포함"되어있는 요소(공백으로 구분, 단어단위로) */
+div[name~=name1] {
+    background-color: yellow;
+}
+
+/* div요소들 중 class속성값이 class로 "시작"하는 요소(-로 구분, 단어로써) */
+div[class|=class] {
+    background-color: aqua;
+}
+
+/* div요소들 중 name속성값이 na로 "시작"하는 요소 */
+div[name^=na] {
+    background-color: cadetblue;
+}
+
+/* div요소들 중 class속성값이 ss로 "끝"나는 요소 */
+div[class$=ss] {
+    color: beige;
+}
+
+/* div요소들 중 class속성값이 i가 "포함"되어 있는 요소 */
+div[class*=i] {
+    background-color: yellow;
+    color: red;
+}
+
+/* class속성값이 div-class인 요소들 중에서 name속성값에 name3이 포함되어 있는 요소 */
+.div-class[name~=name3] {
+    background-color: black;
+}
+
+/* ====================== 2. 자손선택자와 후손 선택자 ====================== */
+/* a>b : a요소의 자손들 중에서 b요소만을 선택 */
+/* #test1>*{background-color: bisque;} */
+
+/* id가 test1인 요소의 자손들 중 h4요소만 선택 */
+#test1>h4 {
+    background-color: orange;
+}
+#test1>ul>li {
+    background-color: blanchedalmond;
+}
+
+/* a b : a요소의 후손(모든 하위요소)들 중에서 b요소만 선택 */
+#test1 li {
+    color: red;
+}
+
+/* ====================== 3. 동위선택자 ====================== */
+#test2+div{background-color: yellow;}
+#test2+ul{background-color: aquamarine;} /* 선택 안됨(바로 뒤의 요소가 아니기 때문에) */
+
+/* #test2~div{background-color: cadetblue;} */
+#test2~ul{background-color: deeppink;}
+
+/* ====================== 4. 반응선택자 ====================== */
+.area {
+    background-color: yellowgreen;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+#active-test:active {
+    background-color: blueviolet;
+    color: white;
+}
+#hover-test:hover {
+    background-color: red;
+    color: white;
+}
+
+/* ====================== 5. 상태선택자 ====================== */
+input[type=checkbox]:checked {
+    width: 30px;
+    height: 30px;
+    /* font-size: 30px;  적용안됨  */
+    /* 기본적으로 해당 선택된 요소 자체에 스타일 반영 input에 해당하는 것만 */
+}
+input[type=checkbox]:checked+label {
+    font-size: 30px;
+}
+input[name^=user]:focus {   /* name이 user로 시작하는 것들이 focus가 맞춰지면 실행 */
+    background-color: pink;
+}
+button:enabled {
+    background-color: rgb(221, 191, 250);
+}
+button:disabled {
+    background-color: yellowgreen;
+}
