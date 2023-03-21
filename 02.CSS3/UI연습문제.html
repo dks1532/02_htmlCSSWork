@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI연습문제</title>
+    <style>
+        .t1 {
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <br>
+    <table>
+        <tr class="t1">
+            <td>고객명 :</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr class="t1">
+            <td>전화번호 :</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr class="t1">
+            <td>E-mail :</td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+    <p>
+        피자선택 : 
+        <select name="pizza">
+            <option value="select" selected>피자를 선택하세요</option>
+            <option value="pizza1">치즈 퐁듀 파이어 미트</option>
+            <option value="pizza2">블록버스터4</option>
+            <option value="pizza3">글로벌 레전드4</option>
+            <option value="pizza4">블랙앵거스 스테이크</option>
+            <option value="pizza5">베스트 콰트로</option>
+            <option value="pizza6">블랙타이거 슈림프</option>
+        </select>
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio"> <label for="S">Small</label><br><br>
+            <input type="radio"> <label for="M">Medium</label><br><br>
+            <input type="radio"> <label for="L">Large</label><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="radio"> <label for="bc">베이컨</label><br><br>
+            <input type="radio"> <label for="ch">치즈</label><br><br>
+            <input type="radio"> <label for="on">양파</label><br><br>
+            <input type="radio"> <label for="ms">버섯</label><br><br>
+        </fieldset>
+    </p>
+    <table>
+        <tr>
+            <td>희망배송시간 :</td>
+            <td><input type="time"></td>
+        </tr>
+        <tr>
+            <td>배송시 요청사항 :</td>
+            <td><textarea cols="20" rows="4"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <input type="submit" value="주문하기">
+</body>
+</html>

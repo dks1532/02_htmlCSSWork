@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/05.style.css">
-    <title>텍스트 관련 스타일</title>
+    <link href="resources/css/05.style.css" rel="stylesheet">
+    <title>텍스트 관련스타일</title>
 </head>
 <body>
     <h1>텍스트 관련스타일(text~)</h1>
-
+    
     <h3>color : 텍스트의 색상 지정</h3>
     <pre id="c">
         선택자 {
             color: 색상명|16진수|rgb(x,x,x)|rgba(x,x,x,x)|hsl(x,x,x)|hsla(x,x,x,x)
         }
     </pre>
-    
+
     <hr>
 
     <h3>text-decoration : 텍스트에 줄을 긋거나 줄을 없앨 때 사용</h3>
     <pre>
-        선택자 {
-            text-decoration: none|underline|overline|line-through;
-        }
+    선택자 {
+        text-decoration: none|underline|overline|line-through;
+    }
     </pre>
 
     <ul>
@@ -38,9 +38,9 @@
 
     <h3>text-transform : 영문자의 대소문자 변환시 사용</h3>
     <pre>
-        선택자 {
-            text-transform : uppercase|lowercase|capitalize;
-        }
+    선택자 {
+        text-transform : uppercase|lowercase|capitalize;
+    }
     </pre>
 
     <ol>
@@ -53,50 +53,54 @@
 
     <h3>text-shadow : 텍스트에 그림자 효과를 줄 때 사용</h3>
     <pre>
-        선택자 {
-            text-shadow:가로거리(x) 세로거리(y) [번짐정도 색상];
-        }
+    선택자 {
+        text-shadow:가로거리(x) 세로거리(y) [번짐정도 색상];
+    }
     </pre>
+
     <div>
-        <span class="shadow" id="ts1">HTML</span><br><br>
-        <span class="shadow" id="ts2">HTML</span><br><br>
-        <span class="shadow" id="ts3">HTML</span>
+        <span class="shadow" id="ts1">HTML<br><br>
+        <span class="shadow" id="ts2">HTML<br><br>
+        <span class="shadow" id="ts3">HTML
     </div>
 
     <hr>
 
-    <h3>text-align :left(기본값)</h3>
+    <h3>text-align : 텍스트 정렬할 때 사용</h3>
+    <pre>
+    선택자 {
+        text-align :left(기본값)|right|justify|center;
+    }
+    </pre>
 
-    <h4>왼쪽 정렬</h4>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore recusandae esse at culpa, cum odio autem delectus omnis laudantium! Quam sequi temporibus aliquid ipsum beatae, rem exercitationem veniam blanditiis nostrum.</p>
-
+    <h4>왼쪽정렬(기본값 : 안넣어도 됨)</h4>
+    <p style="text-align: left;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur labore magnam quis mollitia tempore odit, quas possimus autem amet fugiat adipisci aliquam distinctio? Officiis sequi odio impedit molestiae quam ipsa.Laboriosam hic non suscipit quis mollitia aut impedit amet iste molestiae. Modi beatae odio perspiciatis id mollitia error sit quae libero. Exercitationem tempore totam, placeat iure numquam facere est officia.</p>
+    
     <h4>오른쪽 정렬</h4>
-    <p id="ra">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor voluptatum, officia suscipit pariatur tempora totam harum libero? Asperiores ut iusto vel fugit corporis atque et hic, blanditiis libero iure.</p>
-
+    <p id="ra">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis dolor nihil perferendis, quaerat assumenda quia eveniet molestiae minus obcaecati ipsum animi soluta a repellendus reiciendis dicta? Pariatur dolor molestiae deserunt.Nihil tenetur quo quae, laborum cupiditate delectus consectetur alias aut fuga culpa quidem dolor ut odit nisi! Ad dignissimos expedita corporis quos sed quasi pariatur vitae omnis laudantium, at repudiandae!</p>
+    
     <h4>가운데 정렬</h4>
-    <p id="ca">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque earum rerum error ullam ipsa illum quaerat, hic ipsam possimus obcaecati qui odio expedita quo saepe veniam commodi voluptatibus eos rem!</p>
-
+    <p id="ca">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae aliquam, provident voluptate aliquid veniam vero tenetur reprehenderit. Laboriosam quod non, inventore accusantium nobis ratione eos reprehenderit est deserunt nemo. Illum.Delectus veniam illum eligendi blanditiis quo? Eligendi, magnam animi deleniti facilis dolore dicta praesentium ducimus ut fugiat quis at soluta. Ut, exercitationem? Repudiandae at quaerat sunt magnam asperiores sequi quod.</p>
+    
     <h4>양쪽정렬</h4>
-    <p id="ja">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae est nesciunt placeat fuga expedita, sunt ipsam saepe animi. Enim nisi et consequuntur quisquam ab? Minima quia itaque rem nemo doloremque?</p>
+    <p id="ja">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, facere molestiae! Ipsum alias placeat sunt vel quisquam quasi? Eligendi iste iure enim soluta ad recusandae error id pariatur magni libero!Minima, labore. Ut pariatur minus qui perspiciatis vero illo quod recusandae tempora vel! Consequatur, sapiente consequuntur possimus esse accusantium quasi distinctio, aperiam optio consectetur impedit, omnis fugit veritatis necessitatibus facilis?</p>
 
     <hr>
 
     <h3>line-height : 줄간격 조절할 때 사용</h3>
     <pre>
-        선택자 {
-            line-height : normal|px|em|%;
-        }
+    선택자 {
+        line-height : normal|px|em|%;
+    }
     </pre>
 
     <h4>px : 고정 단위 간격</h4>
-    <p id="lh1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolorum eaque neque repellat officiis consectetur non, commodi fugit excepturi atque minus consequuntur, voluptatum eos sapiente? Numquam libero doloremque aliquid. Doloribus!</p>
-
+    <p id="lh1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore placeat necessitatibus neque impedit pariatur. Aut libero sunt quos officia dolorum alias quisquam at expedita, facere unde! Eveniet illum consequuntur assumenda!</p>
+    
     <h4>em : 가변 단위 간격</h4>
-    <p id="lh2">Sit quasi tempora odit amet cum exercitationem autem ducimus alias, rem voluptatibus possimus in esse dignissimos doloremque, iusto eum laudantium dicta consequuntur obcaecati quia. Autem voluptatum cum ratione sed. Culpa?</p>
-
+    <p id="lh2">Aut, neque. Necessitatibus a ratione error eos quis est placeat totam doloribus, laudantium minus reiciendis culpa labore quo explicabo nihil maiores perspiciatis impedit porro officiis? Ad dolore earum mollitia nemo!</p>
+    
     <h4>% 배율 단위 간격</h4>
-    <p id="lh3">Nam dicta, aliquam ipsa at aperiam iusto sint dignissimos voluptas alias rerum recusandae molestiae doloribus, rem vel? Repudiandae sed facilis possimus magni eos dolores non asperiores provident vel deserunt. Nam!</p>
-
-    <br><br><br><br><br><br><br><br><br><br>
+    <p id="lh3">Velit nobis perspiciatis ad aperiam architecto maxime quibusdam aliquid quaerat hic quos illum suscipit eveniet eos rem ea deserunt iste, soluta incidunt inventore praesentium eum officia. Aut soluta sunt ex!</p>
 </body>
 </html>
