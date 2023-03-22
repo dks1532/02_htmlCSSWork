@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배치관련 스타일</title>
+    <link href="resources/css/12.style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>배치관련 스타일</h1>
+    <h3>position: relative(상대위치)|absolute(절대위치)</h3>
+
+    <div class="outer"> <!-- relative스타일 부여 -->
+        <div class="positioning ye" id="first">첫번째 자식</div>
+        <div class="positioning yg" id="second">두번째 자식</div>
+        <div class="positioning red" id="third">세번째 자식</div>
+    </div>
+
+    <h3>position:fixed(고정위치)</h3>
+    <div class="positioning ye" id="fixed-area">첫번째 자식</div>
+
+    <h3>z-index : 요소들의 순서 바꾸기</h3>
+    <div class="outer"> 
+        <div class="z-index ye" id="z1">첫번째 자식</div>
+        <div class="z-index yg" id="z2">두번째 자식</div>
+        <div class="z-index red" id="z3">세번째 자식</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <hr>
+
+    <h3>visibility : 특정 요소를 보이거나 안보이게하는 스타일</h3>
+    <div class="vis ye">첫번째 자식</div>
+    <!-- <div class="vis yg" style="display: none;">두번째 영역</div> -->
+    <div class="vis yg" style="visibility: hidden;">두번째 영역</div>
+    <div class="vis red">세번째 영역</div>
+    <b>visibility: hidden은 공간 차지하고 있지만 display: none은 공간마저도 사라지게 함</b>
+
+    <h3>float</h3>
+        <p>페이지내의 요소들을 왼쪽 또는 오른쪽으로 배치하는 속성</p>
+    
+    <div class="float-test">요소1</div>
+    <div class="float-test">요소2</div>
+    <div class="float-test">요소3</div>
+    <div class="float-test">요소4</div>
+    <div class="float-test">요소5</div>
+</body>
+</html>

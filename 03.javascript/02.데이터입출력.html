@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .area{
+        border: 1px solid;
+    }
+</style>
+<body>
+    <h1>자바스크립트에서의 데이터 입/출력</h1>
+    <!-- 
+        * window : 자바스크립트 내장 객체로 브라우저 창이 열릴떄마다 하나씩 생성되는 객체
+                   브라우저 창 안에 존재하는 모든 요소들의 최상위 객체(생략가능)
+        * document : 웹 문서마다 하나씩 만들어지는 객체(html 문서에 대한 정보들을 가지고 있음)
+     -->
+
+     <h3>1. 데이터를 출력하는 구문</h3>
+     <p>
+        1) [window.]alert("알림창에 출력할 문구");<br>
+        2) [window.]console.log("콘솔창에 출력할 문구");<br>
+        3) document.write("화면상에 출력할 문구");<br>
+        4) 선택한 요소.innerHTML|innerText = "요소에 출력할 문구";
+     </p>
+
+     <h3>3) document.write("화면상에 출력할 문구")</h3>
+     <button onclick="documentWrite();">화면상에 출력</button>
+
+     <script>
+        function documentWrite() {
+            // document.write("문서에 출력하기");
+            // document.write("<b>안녕</b><br><h2>반가워요</h2>");
+            // 출력할 문구에 html태그가 있을 때는 해석하여 시각적인 요소로 보여짐
+
+            var tableWrite = "<table border='1'>";
+                tableWrite += "<tr>";
+                tableWrite += "     <td>요소1</td>";
+                tableWrite += "     <td>요소2</td>";
+                tableWrite += " </tr>";
+                tableWrite += "</table>";
+
+            document.write(tableWrite);
+        }
+     </script>
+
+     <h3>4) 선택한 요소.innerHTML|innerText = "해당 요소에 출력할 문구";</h3>
+     <div class="area" id="area1">
+        자바스크립트에서 어떤 요소(element)안의 값(content)을 가지고 온다거나
+        변경하고자 할 때 <b>innerHTML, innerText</b>라는 속성에 접근
+     </div>
+
+     <button onclick="tagValue();">확인</button>
+
+     <script>
+        function tagValue() {
+            // 위의 div요소를 가져와서 값을 확인 / 변경
+
+            //  div요소 객체 얻어와서 변수에 저장
+            var divEl = document.getElementById("area1");
+
+            console.log(divEl);
+            console.dir(divEl);
+            // console.dir : 해당 값의 디렉토리 구조를 보고자할 때 사용(속성들의 정보)
+
+            // 선택된 요소의 속성에 접근(.을 통해서)
+            console.log(divEl.id);      // id : 해당 요소의 id속성 값
+            console.log(divEl.className);   // className : 해당 요소의 class속성 값
+
+            console.log(divEl.innerHTML);   // innerHTML : 요소의 content영역 안의 html태그까지 다 포함
+            console.log(divEl.innerText);   // innerText : 요소의 content영역 안의 text만 가지고 옴
+
+            // 해당 요소의 속성값을 변경 가능 : 속성에 접근한 후 대입을 통해서 변경
+            // divEl.innerHTML = "<b>innerHTML로 속성값 변경함</b>";
+            // divEl.innerText = "<b>innerText로 속성값 변경 ㅎㅎㅎㅎㅎㅎㅎ</b>";
+
+            divEl.style.backgroundColor = "yellowgreen";
+            divEl.style.color = "red";
+        }
+     </script>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

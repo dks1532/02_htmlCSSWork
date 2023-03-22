@@ -1,0 +1,22 @@
+body {margin: 0 auto;}
+/* 헤더 */
+header {height: 300px;}
+#logo {float: left; margin-top: 10px; padding-left: 10px;}
+header>form{float: right; margin-top: 10px; margin-right: 10px;}
+#titleImg{clear: both; height: 260px; width: 100%; margin-top: 5px;}
+
+/* nav */
+.navi {background-color: blue; height: 60px;}
+.navi a {display: inline-block; height: 60px; width: 24%; text-align: center; line-height: 60px; color: white;}
+.navi a:hover {color: yellow; text-shadow: 2px 2px 2px black;}
+
+/* 본문 */
+section {width: 650px; padding-left: 10px;}
+
+/* aside */
+aside {margin-top: 15px; height: 200px; display: flex; justify-content: center;}
+aside img{margin: 2px;}
+
+/* footer */
+footer {font-size: 12px; background-color: darkblue;
+        color: wheat; padding: 5px 0 5px 20px;}

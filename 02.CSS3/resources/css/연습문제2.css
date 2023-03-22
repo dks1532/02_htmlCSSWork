@@ -1,0 +1,5 @@
+body {width: 1000px; margin: 0 auto;}
+header {height: 150px;}
+#logo {float: left; margin-top: 30px; margin-left: 80px;}
+
+footer {clear: both; font-size: 12px; padding: 5px 0 5px 20px;}

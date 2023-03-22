@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        /* 웹브라우저로 열어서 F12의 style에서 시각화도구로 스타일을 적용해 볼 수 있다 */
+        ul {
+            padding: 0;
+            list-style: none;
+            border: 2px solid;
+            height: 300px;
+            display: flex;
+            /* flex-direction: column-reverse; */
+        }
+        li {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            border: 2px solid;
+            margin: 5px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>flex</h1>
+
+    <h3>기본축을 기준으로 정렬</h3>
+    <pre>
+    * 부모요소 : flex-container
+        - display : flex
+        - flex-direction : row(기본값)|column|row-reverse|column-reverse
+        - justify-content : 메인축정렬
+        - align-items : 크로스축 정렬
+
+        - flex-wrap : 줄바꿈 여부
+        - align-content : 여러줄인 경우 크로스 축설정
+
+    * 자식요소(정렬의 주체) : flex-item
+        - flex-grow : 빈 여백을 아이템들의 주어진 비율대로 늘어나면서 레이아웃 영역을 채움
+        - flex-shrink : 넘친 아이템 영역을 분배해서 레이아웃 영역 안의 아이템들이 배치되도록 하는 방식
+        - flex-basis : 아이템의 크기를 직접 설정
+    </pre>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+</html>
