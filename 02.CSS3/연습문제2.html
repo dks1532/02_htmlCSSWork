@@ -10,7 +10,10 @@
 <body>
     <header>
         <img src="https://www.iei.or.kr/resources/images/common/top_logo_s.jpg" alt="KH정보교육원 로고" id="logo">
-        
+        <form action="search.do">
+            <input type="search" name="q">
+            <input type="submit" value="검색">
+        </form>
     </header>
     <nav class="navi">
         <a href="#">소개</a>
@@ -26,8 +29,8 @@
     </section>
     <aside>
         <form action="login.do">
-            id <input name="id" size="15">&emsp; 
-            pw <input type="password" name="pw" size="15">
+            id <input name="id" size="15" placeholder="아이디 입력">&emsp; 
+            pw <input type="password" name="pw" size="15" placeholder="비밀번호 입력">
             <input type="submit" value="로그인">
         </form>
     </aside>

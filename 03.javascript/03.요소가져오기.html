@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area {
+            border: 1px solid;
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML요소에 접근하기(해당 요소 객체 가져오기)</h1>
+
+    <h3>1) 아이디를 이용하여 요소 가져오기</h3>
+    <div id="area1" class="area"></div>
+    <button onclick="accessId();">아이디로 접근</button>
+
+    <script>
+        function accessId() {
+            // 선택된 요소 반환
+            var area1 = document.getElementById("area1");
+
+            // 선택한 요소의 속성값을 가져온다거나 변경 가능
+            // 속성에 접근하고자 할 때 => 선택된요소.접근하고자하는 속성
+            area1.innerHTML += "아이디로 접근성공!,<br>";
+
+            // 선택된 요소에 스타일변경
+            area1.style.backgroundColor = "yellow";
+            area1.style.color = "red";
+            area1.style.width = "200px";
+            area1.style.height = "100px";
+        }
+    </script>
+
+    <br><br>
+
+    <fieldset>
+        <legend>range</legend>
+        <input type="range" min="0" max="100" value="30"
+            oninput="document.getElementById('score').innerHTML = this.value;">&emsp;
+        <span id="score">30</span>
+    </fieldset>
+
+    <br><br>
+
+    <div id="area2" class="area" style="background-color: red;"></div>
+    <button onclick="changeColor();">클릭마다색변경</button>
+    <script>
+        function changeColor() {
+            var area2 = document.getElementById("area2");
+
+            console.log(area2.style.backgroundColor);
+
+            if (area2.style.backgroundColor == "red") {
+                area2.style.backgroundColor = "yellowgreen";
+            } else {
+                area2.style.backgroundColor = "red"
+            }
+        }
+    </script>
+
+    <br><br>
+
+    <h3>2) 태그명을 이용하여 요소 가져오기</h3>
+    <ul>
+        <li>목록1</li>
+        <li>목록2</li>
+        <li>목록3</li>
+        <li>목록4</li>
+        <li>목록5</li>
+    </ul>
+    <button onclick="accessTagName();">태그명으로 접근</button>
+
+    <script>
+        function accessTagName() {
+            // 태그명으로 요소를 가져올 때
+            // document.getElementsByTagName("태그명") => 선택된 요소객체들이 배열에 담겨서 반환
+            var list = document.getElementsByTagName("li");     // [li요소객체, li요소객체, li요소객체, ...]
+
+            console.log(list);
+            console.log("배열의 크기(선택된 li요소 갯수) : " + list.length);
+
+            console.log(list[1]);
+
+            // list[0].innerHTML = "안녕하세요";
+
+            var c = 50;
+            for (var i = 0; i < list.length; i++) {
+                list[i].innerHTML = "안녕하세요" + (i + 1);
+                list[i].style.color = "yellow";
+                list[i].style.backgroundColor = "rgb(47,157," + c + ")";
+                c += 50;
+            }
+        }
+    </script>
+
+    <br><br>
+
+    <h3>3) name 속성값을 이용하여 요소 가져오기</h3>
+    <form>
+        <fieldset>
+            <legend>취미</legend>
+
+            <input type="checkbox" name="hobby" value="game" id="game">
+            <label for="game">게임</label>&emsp;
+
+            <input type="checkbox" name="hobby" value="movie" id="movie">
+            <label for="movie">영화감상</label>&emsp;
+
+            <input type="checkbox" name="hobby" value="reading" id="reading">
+            <label for="reading">독서</label>&emsp;
+
+            <input type="checkbox" name="hobby" value="sport" id="sport">
+            <label for="sport">운동</label>
+        </fieldset>
+    </form>
+    <br>
+    <div id="area3" class="area"></div>
+    <button onclick="accessName();">name으로 접근</button>
+
+    <script>
+        function accessName() {
+            var hobby = document.getElementsByName("hobby");
+
+            console.log(hobby);
+
+            var area3 = document.getElementById("area3");
+            for(var i=0; i<hobby.length; i++) {
+                if(hobby[i].checked) {
+                    console.log(hobby[i].value);
+                }
+            }
+        }
+    </script>
+
+    <br><br>
+    <h3>4) 클래스를 이용하여 요소 가져오기</h3>
+    <div class="test"></div>
+    <p class="test"></p>
+    <ul class="test">
+        <li></li>
+        <li></li>
+    </ul>
+    <pre class="test test1"></pre>
+
+    <button onclick="accessClass();">class로 접근</button>
+
+    <script>
+        function accessClass() {
+            // 클래스 속성으로 요소 가져올 때
+            // document.getElementsByClassName("클래스 속성값")
+            var arr = document.getElementsByClassName("test");
+
+            console.log(arr);
+
+            for(var i=0; i<arr.length; i++) {
+                console.log(arr[i]);
+            }
+        }
+    </script>
+
+    <br><br>
+
+    <h3>5) 내가 원하는 요소 자유자재로 가져오기(선택자를 활용하여)</h3>
+
+    <div id="test1">테스트입니다</div>
+    <div class="test2">
+        <h2>안녕</h2>
+        <h2>kh정보교육원</h2>
+    </div>
+    <span>ㅎㅇ</span>
+    <h2>ㅂㅇ</h2>
+
+    <button onclick="accessSelector();">클릭</button>
+
+    <script>
+        function accessSelector() {
+            // 선택자를 이용하여 요소를 가져오고자 할때
+            // document.querySelector("선택자") => 선택된 첫번째 요소 객체 하나만 반환
+            // document.querySelectorAll("선택자") => 선택된 요소객체들을 배열에 담아서 반환
+
+            var divEl = document.querySelector("#test1");    // div요소객체
+            var h2El = document.querySelectorAll(".test2>h2");  // [h2요소객체, h2요소객체 ...]
+            var spanEl = document.querySelector(".test2+span"); // span요소객체
+
+            console.log(divEl.innerHTML);
+            for(var i=0; i<h2El.length; i++) {
+                console.log(h2El[i].innerHTML);
+            }
+            console.log(spanEl.innerHTML);
+        }
+    </script>
+    <div>
+        <p class="cls1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut totam culpa, reiciendis animi vitae, libero et, neque autem ducimus quas molestiae consequuntur eaque quos recusandae adipisci ut quo sequi cum?</p>
+        <p class="cls2" id="p2">Fuga facere voluptatem illum eveniet placeat ut et nemo architecto enim itaque, sed debitis, ipsum a quibusdam neque exercitationem aliquam odit id voluptatibus. Repellendus quis, nam molestias reiciendis earum itaque.</p>
+        <p class="cls1">Delectus sit ex eaque eveniet ipsa laborum illum fugiat sint corrupti aspernatur officia, nihil tempore exercitationem quam cupiditate veniam officiis atque placeat aliquid. Tenetur commodi blanditiis consequatur dolores magnam quam!</p>
+    </div>
+    <button onclick="select();">querySelector</button>  <!-- id="p2"인것만 글자색 바꾸기 -->
+    <button onclick="selectAll();">querySelectorAll</button> 
+    <!-- class="cls1"인 모든요소의 글자색 바꾸기 -->
+
+    <script>
+        function select() {
+            var x = document.querySelector("#p2");
+            x.style.color = "red";
+        }
+
+        function selectAll() {
+            var y = document.querySelectorAll(".cls1");
+            for(var i=0; i<y.length; i++) {
+                y[i].style.color = "blue";
+            }
+        }
+    </script>
+</body>
+</html>
