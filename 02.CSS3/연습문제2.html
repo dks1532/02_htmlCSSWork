@@ -10,7 +10,7 @@
 <body>
     <header>
         <img src="https://www.iei.or.kr/resources/images/common/top_logo_s.jpg" alt="KH정보교육원 로고" id="logo">
-        <form action="search.do">
+        <form action="search.do" id="search">
             <input type="search" name="q">
             <input type="submit" value="검색">
         </form>
@@ -22,19 +22,18 @@
         <a href="#">커뮤니티</a>
         <a href="#">찾아오는 길</a>
     </nav>
-    <section>    
-        <h3>KH정보교육원 소개</h3>
-        <article>
-        </article>
-    </section>
+    <section></section>
     <aside>
         <form action="login.do">
-            id <input name="id" size="15" placeholder="아이디 입력">&emsp; 
-            pw <input type="password" name="pw" size="15" placeholder="비밀번호 입력">
-            <input type="submit" value="로그인">
+            <input name="id" size="15" placeholder="아이디 입력"><br>
+            <input type="password" name="pw" size="15" placeholder="비밀번호 입력">
+            <input type="submit" value="로그인"><br>
+            <button>회원가입</button>
+            <button>ID/PWD찾기</button>
         </form>
     </aside>
     <footer>
+        <div id="b1"><b>이용약관 | 개인정보취급방침 | 인재채용문의 | 훈련비 게시</b></div>
         <p>KH정보교육원 | 사업자등록번호 : 851-87-00622 | 서울 강남 제2014-01호 | 대표자 : 양진선 | 책임자 : 최홍석 |  개인정보관리책임자 : 양진선</p>
         <p>
             강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F<br>

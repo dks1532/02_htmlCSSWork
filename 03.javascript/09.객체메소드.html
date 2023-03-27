@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체메소드</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>* 객체 메소드 작성</h3>
+    <p>객체의 속성 중 함수 자료형인 속성을 메소드라고 부름</p>
+    <div id="area1" class="area"></div>
+    <button onclick="test1();">실행확인</button>
+
+    <script>
+        function test1() {
+            const area1 = document.getElementById("area1");
+            let name = "홍길동";
+
+            const dog = {
+                name:"똥개",
+                kind:"비글",
+                eat:function(food) {
+                    area1.innerHTML +="eat메소드가 호출됨<br>";
+                    area1.innerHTML += `${food}<br>`;
+
+                    // 메소드 속성에서 같은 객체내에 속성에 접근하고자 한다면 this를 붙여야됨
+                    area1.innerHTML += `${this.kind}종류인 ${this.name}가 ${food}를 먹고 있어요<br>`;
+                    // area1.innerHTML += `${kind}종류인 ${name}가 ${food}를 먹고 있어요<br>`;   // 오류
+                    // area1.innerHTML += `${this.kind}종류인 ${name}가 ${food}를 먹고 있어요<br>`; // name에 홍길동이 들어옴
+                }
+            }
+            dog.eat("개사료");
+
+            area1.innerHTML += `---------------------<br>`;
+
+            name = 'hong';
+            const age = 25;
+
+            // ES5
+            const p1 = {
+                name : name,    // name = "hong"
+                age : age,
+                fun1 : function() {
+                    const result = this.name.toUpperCase();
+                    area1.innerHTML += result + "!!!<br>";
+                },
+                setAge : function(vAge) {
+                    this.age = vAge;
+                    area1.innerHTML += "나이 : " + this.age + "<br>";
+                }
+            }
+
+            // ES6
+            const p2 = {
+                name,
+                age,
+                fun1() {
+                    const result = this.name.toUpperCase();
+                    area1.innerHTML += `${result}!!!<br>`;
+                },
+                setAge(vAge) {
+                    this.age = vAge;
+                    area1.innerHTML += `나이 : ${this.age}<br>`;
+                }
+            };
+            p1.fun1();
+            p1.setAge(10);
+            p2.fun1();
+            p2.setAge(30);
+        }
+    </script>
+</body>
+</html>

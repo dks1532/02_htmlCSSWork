@@ -1,5 +1,12 @@
 body {width: 1000px; margin: 0 auto;}
-header {height: 150px;}
-#logo {float: left; margin-top: 30px; margin-left: 80px;}
+header {height: 100px; margin-top: 30px;}
+#logo {float: left; margin-left: 80px;}
+header>form {margin-left: 300px;}
 
-footer {clear: both; font-size: 12px; padding: 5px 0 5px 20px;}
+.navi {width: 1000px; height: 30px;}
+.navi a {display: inline-block; height:5px; width: 130px; text-align: center; line-height: 5px;}
+
+aside {float: right; width: 300px; margin-top: 15px;}
+
+footer {clear: both; font-size: 12px; padding: 5px 0 5px 20px; margin-top: 300px;}
+#b1 {font-size: 15px; background-color: beige;}

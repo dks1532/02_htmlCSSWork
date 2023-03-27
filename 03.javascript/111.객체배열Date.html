@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체배열과 Date</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>* 객체 배열을 사용한 다량의 데이터 관리</h3>
+    <div id="area1" class="area"></div>
+    <button onclick="test1();">실행확인</button>
+
+    <script>
+        function test1() {
+            const student0 = {name:"김말순", java:100, oracle:90, html:100, css:75};
+            const student1 = {name:"박말순", java:89, oracle:79, html:98, css:35};
+            const student2 = {name:"이말순", java:78, oracle:82, html:72, css:98};
+            const student3 = {name:"최말순", java:94, oracle:49, html:79, css:62};
+
+            const students = [];
+            students.push(student0);
+            students.push(student1);
+            students.push(student2);
+            students.push(student3);
+
+            // const students = [student0, student1, student2, student3];
+
+            console.log(students[1]);
+            console.log(students[3].name);
+
+            for(i in students) {
+                students[i].java = 100;     // 모든 학생의 java의 점수 변경
+                console.log(students[i].name, " : " , students[i].java);
+            }
+        }
+    </script>
+</body>
+</html>
