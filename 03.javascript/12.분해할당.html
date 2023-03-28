@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분해할당</title>
+</head>
+<body>
+    <h1>분해할당</h1>
+    <h3>배열이나 객체에 들어있는 속성값을 각각의 변수에 할당</h3>
+
+    <h4>콘솔확인</h4>
+    <script>
+        (function() {
+            /*
+            (구조)분해할당
+            1. 배열의 분해 할당
+            2. 객체의 분해 할당
+            */
+
+            // 1. 배열의 분해 할당
+            //    1) ES5에서 분해할당
+            const point = [20,30,40];
+            const x1 = point[0];
+            const y1 = point[1];
+            const z1 = point[2];
+            console.log('x1, y1, z1 : ', x1, y1, z1);
+
+            //    2) ES6에서 분해할당
+            const [x2, y2, z2] = [20, 30, 40];
+            console.log('x2, y2, z2 : ', x2, y2, z2);
+
+            // 두번째 값 무시하기
+            const [x3, , z3] = point;
+            console.log('x3, z3 : ', x3, z3);
+
+            // 두번째 세번째 값 무시하기
+            const [x4, , , w4] = point;
+            console.log('x4, w4 : ', x4, w4);
+
+            // rest연산자(...) : 여러개의 인자값(배열로 들어옴)
+            // java의 가변인자(String ...arg)
+            const [x5, x6, ...rest] = [10, 20, 30, 40, 50, 60, 70];
+            console.log('x5 : ', x5);
+            console.log('x6 : ', x6);
+            console.log('rest : ', rest);
+
+            // 2. 객체의 분해 할당
+            const car = {
+                model:'k9',
+                color: 'black',
+                year: 2023
+            };
+
+            //    1) ES5에서 분해할당
+            const model1 = car.model;
+            const color1 = car.color;
+            const year1 = car.year;
+            console.log('model1, color1, year1 : ', model1, color1, year1);
+
+            //    2) ES6에서 분해할당
+            const {model, color, year} = car;   // 특정키워드를 넣지 않을 경우 속성명이 같아야 한다
+            console.log('model, color, year : ', model, color, year);
+
+            const {model: model2, color: color2, year: year2} = car;
+            console.log('model2, color2, year2 : ', model2, color2, year2);
+
+            const fun1 = (car1) => {
+                const {model,color} = car1;
+                console.log(model, color);
+            }
+            fun1(car)
+
+            const fun2 = ({model, color}) => console.log(model, color);
+            fun2(car);
+        })();
+    </script>
+</body>
+</html>

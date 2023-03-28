@@ -27,18 +27,18 @@
                 name:"똥개",
                 kind:"비글",
                 eat:function(food) {
-                    area1.innerHTML +="eat메소드가 호출됨<br>";
+                    area1.innerHTML += "eat메소드가 호출됨<br>";
                     area1.innerHTML += `${food}<br>`;
 
                     // 메소드 속성에서 같은 객체내에 속성에 접근하고자 한다면 this를 붙여야됨
                     area1.innerHTML += `${this.kind}종류인 ${this.name}가 ${food}를 먹고 있어요<br>`;
-                    // area1.innerHTML += `${kind}종류인 ${name}가 ${food}를 먹고 있어요<br>`;   // 오류
-                    // area1.innerHTML += `${this.kind}종류인 ${name}가 ${food}를 먹고 있어요<br>`; // name에 홍길동이 들어옴
+                    // area1.innerHTML += `${kind}종류인 ${name}가 ${food}를 먹고 있어요<br>`;  // 오류(지역변수에 kind가 없음)
+                    // area1.innerHTML += `${this.kind}종류인 ${name}가 ${food}를 먹고 있어요<br>`;  // name에 홍길동이 들어옴
                 }
             }
             dog.eat("개사료");
 
-            area1.innerHTML += `---------------------<br>`;
+            area1.innerHTML += `-------------------<br>`;
 
             name = 'hong';
             const age = 25;
@@ -55,7 +55,7 @@
                     this.age = vAge;
                     area1.innerHTML += "나이 : " + this.age + "<br>";
                 }
-            }
+            };
 
             // ES6
             const p2 = {
@@ -74,6 +74,73 @@
             p1.setAge(10);
             p2.fun1();
             p2.setAge(30);
+        }
+    </script>
+
+    <hr>
+
+    <h3>* in과 with키워드</h3>
+    <p>
+        in : 객체 내에 해당 속성이 있는지 확인해주는 키워드(존재하면 true, 아니면 false)
+        with : 객체의 속성 접근시 객체명을 생략할 수 있음(코드를 줄여주는 키워드)
+    </p>
+    이름 : <input id="name"><br>
+    국어 : <input type="number" id="kor"><br>
+    수학 : <input type="number" id="math"><br>
+    영어 : <input type="number" id="eng"><br><br>
+
+    <button onclick="test2();">실행확인</button>
+    <div id="area2" class="area"></div>
+
+    <script>
+        function test2() {
+            const student = {
+                name : document.getElementById("name").value,
+                kor : Number(document.getElementById("kor").value),
+                math : Number(document.getElementById("math").value),
+                eng : Number(document.getElementById("eng").value),
+                toString: function() {
+                    return `[${this.name} : ${this.kor}, ${this.math}, ${this.eng}]`;
+                },
+                getSum : function() {
+                    return this.kor + this.math + this.eng;
+                },
+                getAvg : function() {
+                    // return this.getSum() / 3;
+                    return Math.round((this.getSum() / 3)*10) / 10;   // 자릿수조정(소수점 첫째자리까지)
+                    // return (this.getSum() / 3).toFixed(1);      // 소수점첫째자리까지 고정
+                }
+                /* ES6
+                toString() { `[${this.name} : ${this.kor}, ${this.math}, ${this.eng}]`},
+                */
+            }
+            console.log(student);
+
+            const area2 = document.getElementById("area2");
+            area2.innerHTML += `student : ${student}<br>`;
+            // student.toString() 이 호출됨
+
+            // "속성명" in 객체명 : 객체에 해당 속성이 존재할 경우 true
+            area2.innerHTML += `name속성이 있나? : ${"name" in student}<br>`;
+            area2.innerHTML += `age속성이 있나? : ${"age" in student}<br>`;
+
+            area2.innerHTML += `학생이름 : ${student.name}<br>`;
+            area2.innerHTML += `국어 : ${student.kor}<br>`;
+            area2.innerHTML += `수학 : ${student.math}<br>`;
+            area2.innerHTML += `영어 : ${student.eng}<br>`;
+            //area2.innerHTML += `총점 : ${student.kor + student.math + student.eng}<br>`;
+            area2.innerHTML += `총점 : ${student.getSum()}<br>`;
+            area2.innerHTML += `평균 : ${student.getAvg()}<br>`;
+            area2.innerHTML += "----------------------<br>";
+
+            with(student) {
+                area2.innerHTML += `학생이름 : ${name}<br>`;
+                area2.innerHTML += `국어 : ${kor}<br>`;
+                area2.innerHTML += `수학 : ${math}<br>`;
+                area2.innerHTML += `영어 : ${eng}<br>`;
+                area2.innerHTML += `총점 : ${getSum()}<br>`;
+                area2.innerHTML += `평균 : ${getAvg()}<br>`;
+            }
         }
     </script>
 </body>

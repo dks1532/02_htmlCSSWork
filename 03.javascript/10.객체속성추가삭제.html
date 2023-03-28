@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체속성 추가/삭제</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>* 객체의 속성 추가 및 제거</h3>
+    <button onclick="test1();">실행확인</button>
+    <div id="area1" class="area"></div>
+
+    <script>
+        function test1() {
+            const student = {};  // 빈객체생성
+
+            // 객체에 속성 추가
+            student.name = "아무개";
+            student.hobby = ["공부하기", "게임"];
+            student.dream = "프로게이머";
+            student.age = 20;
+
+            // 중복이름 불가, 덮어쓰기됨
+            student.dream = "프로그래머";
+
+            console.log(student);
+
+            // 객체에 메소드 추가
+            student.toString = function() {
+                const str = `name : ${this.name}<br> 
+                             hobby : ${this.hobby}<br>
+                             dream : ${this.dream}<br>
+                             age : ${this.age}<br>`;
+                return str;
+            }
+
+            document.getElementById("area1").innerHTML = `${student}<hr>`;
+
+            // 객체의 속성 제거
+            delete(student.hobby);
+            document.getElementById("area1").innerHTML += student;
+        }
+    </script>
+</body>
+</html>
