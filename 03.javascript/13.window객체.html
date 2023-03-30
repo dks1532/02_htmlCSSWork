@@ -67,7 +67,7 @@
             setTimeout(function() {
                 myWindow.close();
             }, 3000);
-            // setTimeout: 내가 제시한 일정시간후에 해당함수 "단하번"만 실행
+            // setTimeout: 내가 제시한 일정시간후에 해당함수 "단한번"만 실행
         }
     </script>
 
@@ -105,7 +105,7 @@
 
     <hr>
 
-    <h1>* BOM(Brower Object Model)</h1>
+    <h1>* BOM(Browser Object Model)</h1>
 
     <h3>- location 객체</h3>
     <p>브라우저 주소창과 관련된 객체</p>
@@ -159,5 +159,66 @@
                 h1~ , div, li, p, a .... <br>
         텍스트노드가 존재하지 않는 요소(시작태그로만 이루어져있음) : input, img, hr, br....    
     </p>
+
+    <h3>* 노드(요소) 생성과 관련된 메소드</h3>
+
+    <h4>텍스트노드가 존재하는 노드 생성(시작태그+종료태그)</h4>
+
+    <button onclick="test4();">요소생성</button>
+    <div id="area4"></div>
+
+    <script>
+        function test4() {
+            // 동적으로 요소를 만드는 방법1. "문자열"로 만드는 방법
+            document.getElementById("area4").innerHTML = '<h3>안녕하세요</h3>';
+
+            // 동적으로 요소를 만드는 방법2. document에서 제공하는 메소드를 통해 "요소객체"로 만드는 방법
+            // ElementNode객체 생성 : document.createElement("태그");
+            let elementNode = document.createElement("h3");   // <h3></h3>
+            // TextNode객체 생성 : document.createTextNode("문구");
+            let TextNode = document.createTextNode("안녕하세요");   // 안녕하세요
+
+            // 두개의 노드 결합(요소노드 하위에 텍스트노드 추가)
+            elementNode.appendChild(TextNode);  //<h3>안녕하세요</h3>
+            console.log(elementNode);
+
+            document.getElementById("area4").innerHTML += elementNode;  // 객체이기때문에 toString()호출
+            document.getElementById("area4").appendChild(elementNode);
+        }
+    </script>
+
+    <br>
+
+    <h4>- 텍스트노드가 존재하지 않는 노드 생성(시작태그만 존재하는 요소)</h4>
+    <button onclick="test5();">요소생성</button>
+    <div id="area5"></div>
+
+    <script>
+        function test5() {
+            // <img src="" width="" height="">
+            let img = document.createElement("img");    // <img>
+
+            // 속성추가
+            img.src = "https://iei.or.kr/resources/images/main/main_renewal/top_logo.jpg";
+            img.width = "100";
+            img.height = "30";
+
+            console.log(img);
+            document.getElementById("area5").appendChild(img);
+        }
+    </script>
+
+    <h3>* 노드(요소) 삭제하는 메소드</h3>
+    <button onclick="test6();">요소삭제</button>
+
+    <script>
+        function test6() {
+            // 지우고자하는 요소객체.remove();
+            // document.getElementById("area5").remove();  // div삭제
+            document.getElementById("area5").firstChild.remove();
+        }
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

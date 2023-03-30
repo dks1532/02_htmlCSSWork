@@ -79,10 +79,10 @@
 
     <hr>
 
-    <h3>* in과 with키워드</h3>
+    <h3>* in 키워드</h3>
     <p>
         in : 객체 내에 해당 속성이 있는지 확인해주는 키워드(존재하면 true, 아니면 false)
-        with : 객체의 속성 접근시 객체명을 생략할 수 있음(코드를 줄여주는 키워드)
+        with : 객체의 속성 접근시 객체명을 생략할 수 있음(코드를 줄여주는 키워드)   <!-- 안씀 -->
     </p>
     이름 : <input id="name"><br>
     국어 : <input type="number" id="kor"><br>
@@ -132,15 +132,6 @@
             area2.innerHTML += `총점 : ${student.getSum()}<br>`;
             area2.innerHTML += `평균 : ${student.getAvg()}<br>`;
             area2.innerHTML += "----------------------<br>";
-
-            with(student) {
-                area2.innerHTML += `학생이름 : ${name}<br>`;
-                area2.innerHTML += `국어 : ${kor}<br>`;
-                area2.innerHTML += `수학 : ${math}<br>`;
-                area2.innerHTML += `영어 : ${eng}<br>`;
-                area2.innerHTML += `총점 : ${getSum()}<br>`;
-                area2.innerHTML += `평균 : ${getAvg()}<br>`;
-            }
         }
     </script>
 </body>

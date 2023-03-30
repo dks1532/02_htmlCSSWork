@@ -4,7 +4,7 @@ header {height: 100px; margin-top: 30px;}
 header>form {margin-left: 300px;}
 
 .navi {width: 1000px; height: 30px;}
-.navi a {display: inline-block; height:5px; width: 130px; text-align: center; line-height: 5px;}
+.navi a {display: inline-block; height:5px; width: 130px; text-align: center; line-height: 5px; text-decoration: none; color: black;}
 
 aside {float: right; width: 300px; margin-top: 15px;}
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="resources/js/jquery-3.6.4.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>jQuery 개요</h1>
+
+    <h3>* jQuery 라이브러리 연결 방법</h3>
+    <p>
+        - 공식사이트 :
+        <a href="http://jQuery.com" target="_blank">jQuery 공식사이트</a>
+
+        1. jQuery 라이브러리 직접 다운로드 후 경로 지정(오프라인) <br><br>
+            - Umcompressed(개발자 전용) - 일반 js파일
+            - compressed(배포전용) - 주석, 들여쓰기, 줄바꿈 없애서 용량을 줄임
+        2. CDN(content Delivery Network) 방식(온라인)
+            - 라이브러리가 있는 사이트 url을 넣어줌
+    </p>
+
+    <hr>
+
+    <h3>* jQuery 구문 작성하기</h3>
+
+    <p>
+        jQuery구문으로 dom요소를 다루는 구문을 기본적으로 작성하기 때문에<br>
+        문서상에 요소들이 다 만들어지고 나서 실행되어야 함<br><br>
+
+        <b> > 순수 자바스크립트 에서는</b>
+
+        <pre>
+            window.onload = function() {
+                실행내용;
+            }
+
+            javascript에서의 window.onload구문은
+            해당문서의 요소들이 다 로드되고 연동되는
+            외부문서들도 모두 가져온 후 실행 됨.
+            window.onload는 단 한번만 실행.
+        </pre>
+
+        <b> > jQuery에서의 해당 내용은 3가지 구문으로 제공</b>
+
+        <pre>
+        1) jQuery(document).ready(function() {
+            실행내용;
+            });
+        2) $(document).ready(function(){
+            실행내용;
+            });
+        3) $(function() {
+            실행내용;
+            });
+
+        해당문서의 요소들만 다 로드되면 곧바로 실행됨<br>
+        여러번 기술가능(제한 없음). 순서대로 실행
+        </pre>
+    </p>
+
+    <script>
+        window.onload = function() {
+            console.log("window.onload 실행");
+        }
+
+        window.onload = function() {
+            console.log("window.onload 실행2");
+        }
+
+        jQuery(document).ready(function() {
+            console.log("document ready 구문실행1");
+        })
+
+        $(document).ready(function() {
+            console.log("document ready 구문실행2");
+        })
+
+        $(document).ready(function() {
+            console.log("document ready 구문실행3");
+        })
+
+        $(function() {
+            console.log("document ready 구문실행3");
+
+            // h3요소 선택해서 배경색 변경
+            // > 순수 자바스크립트 방식
+            /* 
+            const h3Arr = document.getElementsByTagName("h3");
+            console.log(h3Arr);
+            h3Arr[0].style.backgroundColor = "yellow";
+            */
+
+            // > jQuery방식
+            $("h3").css("backgroundColor", "yellow");
+            // $("선택자") : 해당요소선택
+            // .css() : 선택된 요소들의 스타일의 기능 수행
+
+            $("#test").css("color", "hotpink");
+        })
+    </script>
+
+    <div id="test">안녕하세요</div>
+</body>
+</html>

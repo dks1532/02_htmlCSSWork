@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식_문제</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 10px 50px 20px;
+            width: 600px;
+            align-content: center;
+        }
+        h1 {text-align: center;}
+        div {margin: 0 auto;}
+        #btn {
+            text-align: center;
+        }
+        button {
+            width: 80px;
+            height: 40px;
+            margin: 10px;
+        }
+        .box {
+            display: flex;
+        }
+        input {
+            position: absolute;
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <div class="area">
+        <div style="display: flex;">* 아이디 : <input type="text" class="box" id="id1"></div><br>
+        &emsp;첫글자는 반드시 영문자하고 영문자 숫자 포함 총 4~12자로 입력하시오.<br><br>
+        <div style="display: flex;">* 비밀번호 : <input type="password" class="box"></div><br>
+        &emsp;영문자, 숫자, 특수문자로 총 8~15자로 입력하시오.<br><br>
+        <div style="display: flex;">* 비밀번호 확인 : <input type="password" class="box"></div><br>
+        &emsp;위의 비밀번호와 일치하게 입력하시오.<br><br>
+        <div style="display: flex;">* 이름 : <input type="text" class="box"><br><br></div>
+        &emsp;한글로만 이루어져 있어야 되며 2글자 이상으로 입력하시오.<br><br>
+        <div style="display: flex;">* 이메일 : <input type="email" class="box"><br><br></div>
+        &emsp;이메일 형식에 맞춰 입력하시오.<br><br>
+        <hr>
+        <div id="btn">
+            <button onclick="test1();">회원가입</button>
+            <button>취소</button>
+        </div>
+    </div>
+
+    <script>
+        function test1() {
+            let RegExp = /^[a-z][a-z0-9]{3,11}$/i;
+            const id1 = document.getElementById("id1").value;
+            if(regExp.test(value)) {
+                alert("정상입력");
+            } else {
+                alert("잘못입력");
+            }
+        }
+    </script>
+</body>
+</html>
