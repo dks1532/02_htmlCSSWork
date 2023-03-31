@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>이벤트 핸들러(이벤트 실행시 실행될 function)연결 방법</h1>
+
+    <h3>* 방법 1. 이벤트 메소드를 통한 연결</h3>
+    <pre>
+        $("선택자").이벤트메소드(function() {
+            실행할 내용;
+        })
+    </pre>
+
+    <h4 id="test1">클릭해보세요</h4>
+
+    <script>
+        $(function() {
+            $("#test1").click(function() {
+                $(this).html("클릭되었습니다");
+            })
+            $("#test1").dblclick(function() {
+                $(this).css("color", "red");
+            }) 
+        })
+    </script>
+
+    <br>
+
+    <h3>* 방법 2. on메소드를 이용한 방법</h3>
+
+    <pre>
+        $("선택자").on("이벤트명", function(){
+            실행할 내용;
+        })
+    </pre>
+
+    <h4 id="test2">마우스 클릭 및 올려보세요</h4>
+
+    <script>
+        // 한 요소에 다중으로 이벤트 연결하기
+        $("#test2").on({"mouseenter":function() {
+            $(this).css("backgroundColor", "yellowgreen").text("마우스 올라감");
+        }, "mouseout":function(){
+            $(this).css("backgroundColor", "yellow").text("마우스 빠져나감");
+        }, "click":function() {
+            // * off()메소드 : 이벤트 핸들러 제거
+            $(this).off("mouseenter").off("mouseout").css("color", "orange");
+        }})
+    </script>
+</body>
+</html>

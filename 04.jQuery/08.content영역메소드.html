@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content 영역 메소드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Content 관련 메소드</h1>
+
+    <h3>* html(["문구"]) : innerHTML 속성과 비슷</h3>
+
+    <p>
+        선택된 요소의 content영역의 값을 리턴해주거나 또는 변경해주는 메소드
+        > $("선택자").html() : 선택된 요소의 content값을 반환해줌(html태그까지 반환)
+        > $("선택자").html("문구") : 선택된 요소의 content영역에 문구를 넣어줌(문구안에 html태그가 있으면 태그로 해석)
+    </p>
+
+    <h1 id="test1">
+        <a>네이버로</a>
+    </h1>
+
+    <h1 id="test2">
+
+    </h1>
+
+    <script>
+        $(function() {
+            const tmp = $("#test1").html();
+            console.log(tmp);
+
+            $("#test2").html(tmp);
+            $("#test2").children.attr("href", "http://www.naver.com");
+        })
+    </script>
+
+    <br>
+
+    <h3>* text(["문구"]) 메소드 : innerText와 비슷</h3>
+
+    <p>
+        선택된 요소의 content영역의 값을 리턴해주거나 변경해주는 메소드<br>
+        > $("선택자").text() : 선택된 요소의 content영역의 값을 반환(html태그가 있어도 그냥 문자로 인식) <br>
+        > $("선택자").text("문구") : 선택된 요소의 content영역에 문구를 넣어(변경)줌(html태그가 있어도 그냥 문자로 넣어줌) <br>
+    </p>
+
+    <h1 id="test3">
+        <a>구글로</a>
+    </h1>
+
+    <h1 id="test4">
+
+    </h1>
+
+    <script>
+        $(function() {
+            const tmp = $("#test3").text();
+            console.log(tmp);
+            $("#test4").text("<a>" + tmp + "</a>");
+        })
+    </script>
+
+    <hr>
+
+    <div class="test">테스트</div>
+    <div class="test">테스트</div>
+    <div class="test">테스트</div>
+
+    <script>
+        $(function() {
+            $(".test").html("<h1>글씨변경</h1>");
+
+            // 선택된 요소들에 순차적으로 접근할때마다 해당 function 실행됨
+            // 이때 함수 실행시 리턴값으로 문구 변경
+            // 콜백 함수 : 함수 실행 후 반환된 결과값을 가지고 반영
+            let count = 0;
+            $(".test").html(function() {
+                return "<h1>글씨변경"+ ++count + "</h1>";
+            })
+
+            // 해당 function이 호출될 때마다
+            // 첫번째 인자값으로 순차적으로 접근하는 요소의 인덱스 번호 전달
+            // 두번째 인자값으로 순차적으로 접근하는 요소의 content영역값 전달
+            $(".test").html(function(index, elem) {
+                return "<h1>글씨변경"+ index + "</h1>";
+            })
+
+            // text() 동일하게 적용
+        })
+    </script>
+</body>
+</html>
