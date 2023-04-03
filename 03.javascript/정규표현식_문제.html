@@ -53,7 +53,7 @@
 
     <script>
         function test1() {
-            let regExp = /^[a-zA-Z][0-9a-zA-Z]{3,11}$/i;
+            let regExp = /^[a-z][a-z\d]{3,11}$/i;
             let id = document.getElementById("id1").value;
             if(!regExp.test(id)) {
                 alert("아이디 형식이 잘못되었습니다.");
@@ -72,6 +72,11 @@
             if(!regExp.test(kName)) {
                 alert("이름 형식이 잘못되었습니다.")
             }
+            // email = /^[a-zA-z0-9]+@[a-zA-Z0-9]+\.[a-z]{2,3}(\.[a-z{2}])?/; //()부분은 있어도 되고 없어도 되는부분 (dka@sad.co.kr)
+            // const emailExp = document.getElementById("email").value;
+            // if(!email.test(emailExp)) {
+            //     alert("이메일 형식이 잘못되었습니다.")
+            // }
         }
     </script>
 </body>

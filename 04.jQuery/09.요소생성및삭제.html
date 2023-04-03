@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +7,9 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
-        .added {color: yellowgreen;}
-        .item{
-            background-color: aquamarine;
+        .added {color:darkcyan;}
+        .item {
+            background-color: yellowgreen;
             width: 100px;
             height: 100px;
             text-align: center;
@@ -22,7 +21,9 @@
             color: white;
             font-weight: bold;
         }
-        .purple {background-color: purple;}
+        .purple{
+            background-color: purple;
+        }
     </style>
 </head>
 <body>
@@ -34,18 +35,18 @@
     <div id="area1"></div>
 
     <script>
-        $(function () {
-            $("#btn").click(function () {
+        $(function() {
+            $("#btn").click(function() {
                 // 1. 문자열로 만드는 방법
-                let el1 = "<p>Creater Element By Text</p>";
+                let el1 = "<p>Create Element By Text</p>";
 
                 // 2. DOM 메소드로 만드는 방법(createElement, createTextNode)
                 let el2 = document.createElement("p");
-                let text = document.createTextNode("create Element By DOM");
+                let text = document.createTextNode("Create Element By DOM");
                 el2.appendChild(text);
 
                 // 3. jQuery로 만드는 방법
-                let el3 = $("<p>Create Element By jQuery<p>");
+                let el3 = $("<p>Create Element By jQuery</p>");
 
                 console.log(el1);
                 console.log(el2);
@@ -68,6 +69,7 @@
         $(A).after(B) : A요소 뒷부분에 B를 추가(동위)<br>
         $(A).before(B) : A요소 앞부분에 B를 추가(동위)<br>
     </p>
+
     <h3>* 삽입 관련 메소드 part2</h3>
     <p>
         선택된 요소를 기준으로 새로운 요소들을 추가시켜주는 메소드<br><br>
@@ -78,6 +80,7 @@
         $(B).insertAfter(A) : B를 A요소 뒷부분에 추가(동위)<br>
         $(B).insertBefore(A) : B를 A요소 앞부분에 추가(동위)<br>
     </p>
+
     <h1 id="test1">
         <span>A1</span>
         <span>A1</span>
@@ -94,29 +97,32 @@
     </h1>
 
     <script>
-        $(function () {
+        $(function() {
             // part1
             $("#test1").append("<span class='added'>B1</span>");    // 자손 맨뒤에 추가
             $("#test2").prepend("<span class='added'>B2</span>");   // 자손 맨앞에 추가
 
-            $("#test3").before("<span class='added'>B3</span>");     // 앞에 추가
-            $("#test4").after("<span class='added'>B4</span>");     // 뒤에 추가 
+            $("#test3").before("<span class='added'>B3</span>");    // 앞에 추가
+            $("#test4"). after("<span class='added'>B4</span>");    // 뒤에 추가
+            
 
             // part2
-            /* 
-            $("<span class='added>B1</span>").appendTo("#test1");
-            $("<span class='added>B2</span>").prependTo("#test2");
+            /*
+            $("<span class='added'>B1</span>").appendTo("#test1");
+            $("<span class='added'>B2</span>").prependTo("#test2");
 
-            $("<span class='added>B3</span>").insertBefore("#test3");
-            $("<span class='added>B4</span>").insertAfter("#test4");
+            $("<span class='added'>B3</span>").insertBefore("#test3");
+            $("<span class='added'>B4</span>").insertAfter("#test4");
             */
         })
     </script>
 
+    <hr>
+
     <h3>* 요소객체 복제 메소드</h3>
     <p>
         변수 = $("선택자").clone([true|false]) : 선택된 요소를 복제해서 반환 해주는 메소드<br>
-        true|flase : 복제할 요소에 걸려있는 이벤트까지 복할 것인지 지정(기본값:false)
+        true|false : 복제할 요소에 걸려있는 이벤트까지 복사할 것인지 지정(기본값:false)
     </p>
 
     <div id="clone-test">
@@ -132,16 +138,20 @@
         $(function() {
             $(".item").hover(function() {
                 $(this).addClass("purple");
-            }, function(){
+            }, function() {
                 $(this).removeClass("purple");
             });
 
             // 복제 버튼 클릭시 #item1요소 복사해서 #clone-result에 넣기
             $("#clone").click(function() {
-                /* 
-                const copy = $("#item1").clone();
+                /*
+                // const copy = $("#item1").clone();
                 const copy = $("#item1").clone(true);
+
+                $("#clone-result").append(copy);
                 */
+
+                // $("#clone-result").append($("#item1").clone(true));
 
                 $("#item1").clone(true).appendTo("#clone-result");
             })
@@ -188,10 +198,10 @@
             })
         })
     </script>
-    <!-- 
+    <!--
         요소.css("스타일속성", "값") : 변경
         요소.css("스타일속성") : 반환
-        
+
         요소.val("텍스트") : value값 변경
         요소.val() : value값 반환
 
@@ -208,6 +218,6 @@
 
         요소.addClass("클래스명") : 클래스속성 삽입
         요소.removeClass("클래스명") : 클래스속성 제거
-     -->
+    -->
 </body>
 </html>

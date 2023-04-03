@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>시각적인 효과(Effect 메소드)</h1>
+    <p>페이지 내에 애니메이션 효과를 주기 위해 사용되는 메소드</p>
+
+    <h3>* show(), hide(), toggle()</h3>
+    <p>선택된 요소가 점점 커지면서 보여지고, 점점 작아지면서 사라지게 하는 메소드</p>
+
+    <button id="hide">숨기기</button>
+    <button id="show">보여주기</button>
+    <button id="toggle">토글</button>
+
+    <br><br>
+
+    <img src="../01.html/resources/img/img2.jpg" alt="호수" id="img1">
+
+    <div id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus provident voluptate, culpa velit possimus, est natus tenetur fugit eos facilis impedit quo dicta illo corporis minus cumque libero, itaque iure.
+        Earum blanditiis, ipsam, sunt expedita ratione excepturi nesciunt maiores similique, quos nobis consequuntur? Accusamus, consequatur? Quod velit libero at dolor nulla veniam commodi! Perferendis sunt quam, pariatur possimus laudantium assumenda!
+        Molestias possimus voluptatibus rerum. Placeat totam nam quia! Nesciunt illum sit quia praesentium soluta? Repellat eius reiciendis dolorum minus temporibus laudantium, in provident, perferendis impedit cum odit similique nobis vel.
+    </div>
+
+    <script>
+        $(function() {
+            $("#hide").click(function() {
+                $("#img1").hide(2000);
+            })
+
+            $("#show").click(function() {
+                $("#img1").show(2000);
+            })
+
+            $("#toggle").click(function() {
+                $("#content").toggle(2000);
+            })
+        })
+    </script>
+</body>
+</html>

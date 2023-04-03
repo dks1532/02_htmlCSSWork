@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+        div {
+            background-color: beige;
+            border: 1px solid yellow;
+            border-radius: 10px;
+            width: 400px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+            padding-left: 10px;
+            margin-bottom: 5px;
+        }
+        p {
+            width: 400px;
+            height: 100px;
+            border: 1px solid lightblue;
+            border-radius: 10px;
+            padding-left: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>Q. 질문입니다</div>
+    <p>A. 질문에 대한 답 입니다.</p>
+
+    <div>Q. 점심시간?</div>
+    <p>A. 12:20 ~ 13:30까지.</p>
+
+    <div>Q. 평가일?</div>
+    <p>A. 4월 4일 13:30분 부터.</p>
+
+    <div>Q. 종료시간?</div>
+    <p>A. 18:20.</p>
+
+    <div>Q. 벚꽃이 만발하는 시기?</div>
+    <p>A. 바로 지금.</p>
+
+    <script>
+        $(function() {
+            $("div").click(function() {
+                const p1 = $(this).next();
+                if(p1.css("display")=="none") {
+                    p1.slideDown();
+                } else {
+                    p1.slideUp();
+                }
+            })
+        })
+    </script>
+</body>
+</html>

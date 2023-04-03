@@ -14,7 +14,7 @@
         th, td {
             border: 1px solid;
         }
-        tbody>tr:hover{
+        tbody>tr:hover {
             cursor: pointer;
         }
     </style>
@@ -44,7 +44,7 @@
                 <td>두번째 글 제목</td>
                 <td>user02</td>
                 <td>51</td>
-                <td>2023-03-31</td>
+                <td>2023-03-19</td>
             </tr>
             <tr>
                 <td>1</td>
@@ -59,22 +59,26 @@
     <br><br>
 
     선택된 게시글 정보 :
-    <span id="s0">글번호</span> /
+    <span id="s0">글번호</span> / 
     <span id="s1">제목</span> /
     <span id="s2">작성자</span> /
     <span id="s3">조회수</span> /
-    <span id="s4">작성일</span> /
+    <span id="s4">작성일</span>
 
     <script>
         $(function() {
             $("tbody>tr").click(function() {
-                /* console.log($(this).children().eq(0).text()); // 글번호
-                console.log($(this).children().eq(1).text()); */   
-
+                /*
+                console.log($(this).children().eq(0).text());  // 글번호
+                console.log($(this).children().eq(1).text());   // 제목
+                */
+               
                 $(this).children().each(function(index, el) {
                     console.log($(el).text());
                     $("#s"+index).text($(el).text());
                 })
+                
+                // location.href = "detail.bo?no=" + $(this).children().eq(0).text();
             })
         })
     </script>

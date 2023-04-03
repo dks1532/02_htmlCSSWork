@@ -1,0 +1,45 @@
+/* 전체 */
+* {margin: 0 auto; padding: 0; list-style: none; text-decoration: none; color: black;}  /* 기본 세팅 */
+/* 위아래로는 여백이0 좌우로 오토 */
+a {color : inherit;}
+a:hover {color: inherit;}
+body {width: 1000px;}
+
+/* 헤더부분 */
+header {height: 150px;}
+header>div {float: left;}
+header>div>img {width: 150px; margin-top: 40px;}
+header>nav {float: right; margin-top: 30px; padding: 10px;}
+.nav {width: 600px; height: 20px;}
+.nav>li {float: left; width: 200px; text-align: center; padding: 5px 0; position: relative;}
+/* relative가 기준 (0, 0) 이라고 생각 */
+.nav>li:hover {background-color: darkblue; color: white;}
+.submenu {display:none; position: absolute; width: 100%; margin-top: 5px; z-index: 1;}  /* z-index는 z축 위로 올라오는 순위 */
+/* relative를 기준으로 absolute가 절대좌표로 밑으로 들어간다.
+   absolute는 relative를 먼저 넣고 사용해야함 */
+.submenu>li {padding: 5px 0; background-color: rgba(255, 255, 255, 0.3); z-index: 2;}
+.submenu>li:hover{background-color: rgb(83, 83, 136); color: white;}
+
+/* 본문이미지 */
+#imgslide {clear: both; height: 362px; position: relative; overflow: hidden;}
+/* float으로 쌓아논것을 clear: both로 풀어줌 */
+/* 범위를 넘어가는 것을 숨기기 위해 overflow: hidden을 넣어줌 (안해주면 화면을 크게했을때 옆에 그림이 보임)*/
+#imgslide>img {position: absolute;}
+
+/* 본문 내용 */
+.notice {float: left; text-align: center; padding: 10px;}
+.partner {float: right; text-align: center; padding: 10px;}
+.partner>div {margin-top: 10px;}
+.partner>div>img {width: 400px; height: 150px;}
+tr:nth-child(even) {
+   background-color: darkgrey;
+ }
+.icon {clear: both;}
+.icon>div {float: left; margin-left: 170px;}
+.imgbtn>img {width: 100px; height: 150px;}
+button {background-color: darkgray; color: white; border-radius: 10px; padding: 15px 20px; border: 0; margin-bottom: 20px;}
+
+footer {clear: both; background-color: cornflowerblue; display: flex;}
+footer>ul {float: left; display: flex;}
+footer>ul>li {margin-left: 30px; align-self: center;}
+footer>p {float: left; color: white;}
